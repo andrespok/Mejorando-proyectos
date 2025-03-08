@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+:root {
+  /* Colores principales */
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+
+  /* Escala de Rose */
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  background-color: var(--rose-50);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 90%;
+  max-width: 1000px;
+  background-color: var(--rose-50);
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/* Parte Izquierda  */
+
+.menu {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.items {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.items img {
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.desserts h1 {
+  margin-left: 10px;
+}
+
+/* tamaño de las fuentes */
+
+.desserts h1 {
+  font-size: 28px;
+  color: var(--rose-900);
+}
+
+.title {
+  font-size: 12px;
+  margin-bottom: 2px;
+  color: var(--rose-400);
+}
+
+.description {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: var(--rose-900);
+}
+
+.price {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+/* Botones */
+
+.item-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 5px;
+  border-radius: 20px;
+  width: 110px;
+  height: 32px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+  cursor: pointer;
+  border: 0.5px solid var(--rose-400);
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.item-btn img {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Parte derecha */
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  height: 250px;
+  max-height: 700px;
+  width: 90%;
+  margin-left: 1rem;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.cart > img {
+  margin-top: 2rem;
+  max-width: 80px;
+  margin-bottom: 1rem;
+}
+
+.cart h3 {
+  align-self: flex-start;
+  margin-left: 1rem;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.cart p {
+  font-size: 12px;
+  margin-bottom: 1rem;
+  color: var(--rose-400);
+}
+
+/* Editando el DOM con JavaScript */
+
+.item-btn.active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--red);
+  color: var(--red);
+  padding: 5px 10px;
+}
+
+.count {
+  color: white;
+  font-size: 10px;
+}
+
+.decrease,
+.increase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  border: 0.5px solid white;
+  background-color: var(--red);
+  cursor: pointer;
+}
+
+.decrease:hover,
+.increase:hover {
+  background-color: white;
+  color: var(--red);
+}
+
+/* Agregando los items al carrito (DOM JAVASCRIPT) */
+
+.cart-items{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.item-price{
+  display: flex;
+}
+
+.icon-x{
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+}
+
+#icon-x{
+  background-color: tomato;
+}
