@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <title>Frontend Mentor | Product list with cart</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body> 
+
+  <div class="container">
+
+    <div class="desserts">
+      <h1>Desserts</h1>
+
+      <div class="menu">
+          <!-- items goes here  -->
+      </div>
+    </div>
+
+    <div class="cart">
+      
+      <h3>Your Cart (<span id="cartspan">0</span>)</h3>
+      <img src="./assets/images/illustration-empty-cart.svg" alt="">
+      <p class="cart-message">Your added items will appear here</p>
+
+      <div class="cart-list">
+        <!-- Lista de items para el carrito -->
+      </div>
+
+    </div>
+    
+    </div>
+  <script src="script.js"></script>
+
+  <div class="modal hidden" id="final-modal">
+    <div class="modal-content">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="">
+      <!-- Ya no hay botón .close-modal -->
+      <h2>Order Confirmed!</h2>
+      <!-- Aquí mostraremos los items del carrito nuevamente -->
+      <div class="modal-cart-items"></div>
+      <!-- Botón para proceder con el pago / finalizar compra -->
+      <button class="purchase-btn">Start New Order</button>
+    </div>
+  </div>
+
+  </body>
+
+</html>
