@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+}
+
+body {
+  position: relative;
+  background-color: var(--green-200);
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+/* le damos la posicion a varios div a la vez */
+.first-name div,
+.last-name div,
+.email div,
+.message div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* todo lo que sea de nombres y apellidos */
+
+.name {
+  display: flex;
+  gap: 1rem;
+}
+
+.first-name,
+.last-name {
+  width: 50%;
+}
+
+#input-firstname,
+#input-lastname {
+  height: 40px;
+  border-radius: 7px;
+  border: 0.5px solid var(--grey-500);
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+#input-email {
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid var(--grey-500);
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+/* parte query */
+
+.query-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+
+.general-enquiry,
+.support-request {
+  border: 0.5px solid var(--grey-500);
+  border-radius: 7px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.general-enquiry:has(input:checked),
+.support-request:has(input:checked) {
+  background-color: var(--green-200);
+  border: 1px solid var(--green-600);
+}
+
+.query-options input[type="radio"]{
+  accent-color: var(--green-600);
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus{
+  outline: none;
+}
+
+input{
+  padding: 20px;
+}
+
+/* parte mensaje */
+
+#message-text {
+  height: 80px;
+  resize: none;
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 7px;
+  border: 0.5px solid var(--grey-500);
+  font-size: 16px;
+}
+
+/* parte consentimiento */
+
+.consent-check {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.consent-check label {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* parte boton */
+
+.submit {
+  padding: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--green-600);
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.submit:hover{
+  background-color: var(--grey-900);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--green-600);
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* modificación del span, temporalmente color verde luego lo cambiaremos */
+
+span {
+  color: var(--green-600);
+}
+
+.field-required{
+  color: var(--red);
+  margin-top: 10px;
+}
+
+.hidden{
+  display: none;
+}
+
+/* preparando el modal */
+
+.modal {
+  position: absolute;
+  background-color: var(--grey-900);
+  opacity: 1;
+  color: white;
+  width: 90%;
+  max-width: 450px;
+  padding-left: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 750px;
+  border-radius: 10px;
+}
+
+.modal div{
+  display: flex;
+  gap: 0.5rem;
+  width: 500px;
+  margin-bottom: 0.5rem;
+}
+
+.modal div p{
+  font-weight: 600;
+}
+
+.modal-thanks{
+  font-weight: 100;
+
+}
+
+@media (max-width: 570px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .name {
+    flex-direction: column;
+  }
+
+  .first-name,
+  .last-name {
+    width: 100%;
+  }
+
+  .query-options{
+    flex-direction: column;
+  }
+}
